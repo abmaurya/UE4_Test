@@ -2,6 +2,8 @@
 
 
 #include "MyPawn.h"
+#include "Windows/WindowsPlatformApplicationMisc.h"
+#include "Widgets/Colors/SColorPicker.h"
 
 // Sets default values
 AMyPawn::AMyPawn()
@@ -11,24 +13,13 @@ AMyPawn::AMyPawn()
 
 }
 
-// Called when the game starts or when spawned
-//void AMyPawn::BeginPlay()
-//{
-//	Super::BeginPlay();
-//	
-//}
-//
-//// Called every frame
-//void AMyPawn::Tick(float DeltaTime)
-//{
-//	Super::Tick(DeltaTime);
-//
-//}
-//
-//// Called to bind functionality to input
-//void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-//{
-//	Super::SetupPlayerInputComponent(PlayerInputComponent);
-//
-//}
+void AMyPawn::OnClickAction()
+{
+    FVector2D CurrentCursorPosition = FSlateApplication::Get().GetCursorPos();
+    FLinearColor ScreenColor = FPlatformApplicationMisc::GetScreenPixelColor(CurrentCursorPosition);
+    
+    color.X = ScreenColor.R;
+    color.Y = ScreenColor.G;
+    color.Z = ScreenColor.B;
+}
 
