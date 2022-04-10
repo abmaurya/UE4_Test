@@ -1,1 +1,1 @@
-The project is an assignment done for Innovana Technologies Pvt. Ltd. as an interview process.
+The project is an assignment done for Innovana Thinklabs Pvt. Ltd. as an interview process.
